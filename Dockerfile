@@ -7,7 +7,6 @@ WORKDIR /src
 RUN apk add zeromq-dev musl-dev bash
 ENV RUSTFLAGS="-C target-feature=-crt-static" 
 RUN cargo build
-# fails, try running from bash
-# RUN cargo test
+RUN cargo test
 
 CMD ["/bin/bash"]
